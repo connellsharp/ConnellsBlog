@@ -48,6 +48,10 @@ DDD aggregates also provide a consistency boundary. I like CQRS commands to be a
 
 - External read store = different databases, outside transaction, resilient, eventually consistent
 
+1. Only persist events in the database. Queries and commands rebuild the state from these events when needed.
+2. Persist the events, but also pre-compute read models for queries to read from later.
+3. Persist the events, and
+
 ## Eventual Consistency
 
 - Commands that return acceptance not fulfillment
@@ -61,3 +65,19 @@ DDD aggregates also provide a consistency boundary. I like CQRS commands to be a
 # Conclusion
 
 But they're not the same ideas. All these can be used independently, or you can mix and match whichever suit the needs of your project.
+
+
+
+
+
+
+
+
+## Relationship to DDD
+
+CQRS is commonly used alongside DDD. It's not a rule - you can use each independently - but they work well together.
+
+The domain model would live on the command side of a CQRS system. Changes to be applied to aggregates.
+
+This part of the system will be responsible for committing data transactions.
+
