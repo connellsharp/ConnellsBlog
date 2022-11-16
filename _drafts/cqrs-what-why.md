@@ -16,11 +16,11 @@ Or, my favorite interpretation, *"Asking a question should not change the answer
 
 An example of violating CQS in the .NET Framework is the `Queue.Dequeue` method, or `Stack.Pop`. These methods return a result *and* change the state of the queue/stack.
 
-... diagram of single Dequeue method
-
 ![Dequeue method with return value](/images/diagrams/cqrs-dequeue-1.svg)
 
-If we wanted a design that follows CQS, the Dequeue method should return `void` and we should use the `Peek` method to read.
+If we wanted a design that follows CQS:
+1. The `Dequeue` method should return `void`. This makes it a **command**.
+2. We should use the `Peek` method to read the next item. This is a **query** that does not change the state of the queue.
 
 ![Dequeue command and separate Peek query](/images/diagrams/cqrs-dequeue-2.svg)
 
@@ -28,7 +28,7 @@ If we wanted a design that follows CQS, the Dequeue method should return `void` 
 
 **Command Query Responsibility Segregation (CQRS)** takes this concept a step further by treating reads and writes as entirely separate subsystems. Top to bottom. Not just methods, but different classes that can have different models for the same data. This is different from a CRUD design, where read and write to an entity using the same object structure.
 
-... diagram of split up subsystems
+![CQRS system with a single database](/images/diagrams/cqrs-single-database.svg)
 
 This approach supports a more task-based design, which is sometimes more natural that trying to force one unified model for both reading and writing.
 
@@ -93,6 +93,9 @@ CAP theorem. If we want a distributed system to be highly available, we must acc
 ## Separating Persistence
 
 Some applications even have different databases tailored to reading and writing.
+
+![CQRS system with separate read and write stores](/images/diagrams/cqrs-separate-stores.svg)
+
 
 ## Relationship to Other Concepts
 
