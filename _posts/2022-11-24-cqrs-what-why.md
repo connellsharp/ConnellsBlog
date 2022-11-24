@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CQRS - What and Why?
+title: "CQRS: What and Why?"
 tags: cqrs
 ---
 
