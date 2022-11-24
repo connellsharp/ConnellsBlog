@@ -14,7 +14,7 @@ Or, my favorite interpretation, *"Asking a question should not change the answer
 
 ## Dequeue or Pop
 
-An example of violating CQS in the .NET Framework is the `Queue.Dequeue` method, or `Stack.Pop`. These methods return a result *and* change the state of the queue/stack.
+An example of violating CQS in the .NET Framework is the [`Queue.Dequeue`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue) method. Or, similarly, [`Stack.Pop`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1.pop). These methods return a result *and* change the state of the queue/stack.
 
 ![Dequeue method with return value](/images/diagrams/cqrs-dequeue-1.svg)
 
@@ -24,9 +24,11 @@ If we wanted a design that follows CQS:
 
 ![Dequeue command and separate Peek query](/images/diagrams/cqrs-dequeue-2.svg)
 
+This design doesn't come without its trade-offs, of course; it won't be thread-safe to call one method after the other. But CQS argues this is better encapsulation, and that now both methods have a single responsibility which we can reuse. We can ask what is at the front of the queue without having side-effects.
+
 ## The R - Responsibility
 
-**Command Query Responsibility Segregation (CQRS)** takes this concept a step further by treating reads and writes as entirely separate subsystems. Top to bottom. Not just methods, but different classes that can have different models for the same data. This is different from a CRUD design, where read and write to an entity using the same object structure.
+**Command Query Responsibility Segregation (CQRS)** takes this concept a step further by treating reads and writes as entirely separate subsystems. Top to bottom. Not just methods, but different classes that can have different models for the same data. This is different from a CRUD design, where we read and write entities using the same object structure.
 
 ![CQRS system with a single database](/images/diagrams/cqrs-single-database.svg)
 
@@ -60,35 +62,39 @@ public class UserProjection
 
 It's easy to imagine other ways we might want to interact with this same data, such as a `LoginCommand` or a `CountActiveUsersQuery`. It doesn't seem intuitive to think of these in a CRUD-like manner. In this case, applying CQRS simplifies the design.
 
-And that's all CQRS is; designing two separate subsystems for reading and writing the same data.
+And that's all CQRS is; designing two separate models for reading and writing the same data. Everything else is extra.
 
 ## Optimising Commands and Queries
 
-Commands and queries are very different beasts. Particularly at scale. Splitting them up allows each subsystem to evolve independently.
+Commands and queries are very different beasts. Particularly at scale. One of the main benefits of CQRS is that the two separate subsystems can evolve independently.
 
 Optimising query performance usually involves some kind of caching or pre-computation.
 
-- **Caching** results of a query in memory so to reduce load on the database is particularly useful when reading the data is far more common than writing it.
+- **Caching** results of a query in memory to reduce load on the database is particularly useful when we read the data significantly more often than writing it.
 - **Denormalised data structures** can mean simpler SQL `SELECT` statements with fewer joins.
-- Database **indexes** 
+- Database **indexes** are essentially pre-ordered copies of certain columns that can be used to lookup rows more quickly.
 - Setting up secondary read-only **replicas** of the database to take the load of the primary server.
 
-Queries are naturally idempotent and safe to replay if they experience a temporary outage.
+In terms of fault tolerance, it's worth noting that queries are naturally idempotent and safe to replay if there is a temporary outage.
 
 Writing data, on the other hand, brings very different problems to solve. What do we do if you miss the response of a non-idempotent command? What happens if multiple concurrent processes try to modify the same data? Do we have to write changes to all replica databases?
 
 Common solutions to improve performance of commands are:
 
-- Making commands **asynchronous**, just returning `202 Accepted`, *"I promise to do that later"*.
 - **Sharding** the database. Storing partitions of data on different servers.
-
-....transactions
+- Making commands **asynchronous**, just returning `202 Accepted`, *"I promise to do that later"*.
 
 ## Eventual Consistency
 
-.....
+Using caches or replicas of the same data forces us to make a trade-off. In a distributed system, CAP theorem states that we must chose between availability or consistency.
 
-CAP theorem. If we want a distributed system to be highly available, we must accept that it may not be immediately consistent.
+![Dequeue command and separate Peek query](/images/diagrams/cap-theorem.svg)
+
+If we chose to design a system that is scalable and highly available, we must accept that data will only be **eventually consistent**.
+
+That is, when querying from a cache, replica node, or a table pre-computed in separate data transaction, we accept that the data might be slightly out of date, and we must build our application around that constraint.
+
+This is made very explicit with the aforementioned asynchronous commands that return *"I promise to do that later"*. After such a response, the caller does not expect to be able to query the data immediately.
 
 ## Separating Persistence
 
@@ -96,6 +102,7 @@ Some applications even have different databases tailored to reading and writing.
 
 ![CQRS system with separate read and write stores](/images/diagrams/cqrs-separate-stores.svg)
 
+For example, a web application could write to a normalised relational data model in SQL Server, but a separate worker service computes complex views and stores them as a nested document structure in MongoDB for some queries. As you can imagine, having a process sync data between the two databases here can only be eventually consistent.
 
 ## Relationship to Other Concepts
 
