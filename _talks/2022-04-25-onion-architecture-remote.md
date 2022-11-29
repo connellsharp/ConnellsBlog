@@ -10,6 +10,6 @@ A remote version of my Onion Architecture talk from DDD East Midlands with a few
 
 <div class="video">
 <div class="video-wrapper">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/piCzFv1fGdQ?start=401" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/piCzFv1fGdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
