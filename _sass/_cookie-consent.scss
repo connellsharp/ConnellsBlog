@@ -1,0 +1,21 @@
+
+    #cookie-notice {
+        padding: 0.5rem 1rem;
+        display: none;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #eee;
+    }
+    #cookie-notice button {
+			padding: 10px;
+			margin: 5px;
+		}
+    @media (max-width: 767px) {
+        #cookie-notice span {
+            display: block;
+            padding-top: 3px;
+            margin-bottom: 1rem;
+        }
+    }
