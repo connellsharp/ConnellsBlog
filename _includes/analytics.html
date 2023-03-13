@@ -1,3 +1,6 @@
+{% if site.request_metrics %}
+	<script async src="https://cdn.requestmetrics.com/agent/current/rm.js" data-rm-token="{{ site.request_metrics }}"></script>
+{% endif %}
 {% if site.google_analytics %}
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K0LJ54QGN"></script>
 	<script>
