@@ -4,9 +4,9 @@ title: Open Source CI pipeline for .NET with AppVeyor
 tags: ci-cd
 ---
 
-Plenty of tools offer **free** licenses for open source projects. Often they work quite nicely with eachother. In this post I'll show how GitHub, AppVeyor, MyGet and CodeCov can work together in a complete CI/CD pipeline.
+Plenty of tools offer **free** licenses for open source projects. Often they work quite nicely with each other. In this post I'll show how GitHub, AppVeyor, MyGet and CodeCov can work together in a complete CI/CD pipeline.
 
-This is the setup I use for [Firestorm](https://github.com/connellsharp/Firestorm) - a solution with 50+ projects, some multi-targetting .NET Standard and .NET Framework, some integration tests communicating with SQL Server.
+This is the setup I use for [Firestorm](https://github.com/connellsharp/Firestorm) - a solution with 50+ projects, some multi-targeting .NET Standard and .NET Framework, some integration tests communicating with SQL Server.
 
 The majority of this I learned from [Andrew Lock](https://andrewlock.net/publishing-your-first-nuget-package-with-appveyor-and-myget/) and [Jimmy Bogard](https://lostechies.com/jimmybogard/2016/05/24/my-oss-cicd-pipeline/) and recommend reading their posts for full details. As with their posts, we're going to start assuming your .NET source is already hosted in GitHub.
 
@@ -27,8 +27,8 @@ All the packages should share the same version number, author, and a few other p
   <PropertyGroup>
     <VersionPrefix>0.9.4</VersionPrefix>
     <VersionSuffix>alpha-00001</VersionSuffix>
-    <Authors>Connell Watkins</Authors>
-    <Copyright>Copyright © Connell Watkins 2017</Copyright>
+    <Authors>Connell</Authors>
+    <Copyright>Copyright © Connell 2017</Copyright>
     <PackageProjectUrl>https://github.com/connellsharp/Firestorm</PackageProjectUrl>
   </PropertyGroup>
 </Project>
