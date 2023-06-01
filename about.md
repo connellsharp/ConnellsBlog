@@ -14,4 +14,4 @@ I have a few open-source libraries I like to build on the side.
 
 ## This Site
 
-This site itself is built with Jekyll and is [open source on my GitHub](https://github.com/connellw/ConnellsBlog).
+This site itself is built with Jekyll and is [open source on my GitHub](https://github.com/connellsharp/ConnellsBlog).

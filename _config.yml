@@ -9,7 +9,7 @@ name: Connell W
 description: .NET Developer from the UK
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://github.com/connellw.png
+avatar: https://github.com/connellsharp.png
 
 #
 # Flags below are optional
@@ -21,12 +21,12 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: connellw
+  github: connellsharp
   instagram:
   linkedin:
   pinterest:
   rss: # just type anything here for a working RSS icon
-  twitter: connelldev
+  twitter: connellsharp
   stackoverflow: users/369247/connell
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/

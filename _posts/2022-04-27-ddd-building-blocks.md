@@ -34,7 +34,7 @@ public class BlogWrittenEvent : IDomainEvent
 
 Note the use of init-only properties. **Events are immutable**. They have already happened, which is why they are written in past tense.
 
-I've chosen to have them all inherit [an `IDomainEvent` interface here](https://github.com/connellw/Doodad/blob/master/src/Doodad/IDomainEvent.cs). This is helpful if I want to use a `ICollection<IDomainEvent>` later to store them in memory. It could also enforce conventional properties, such as an `Id`.
+I've chosen to have them all inherit [an `IDomainEvent` interface here](https://github.com/connellsharp/Doodad/blob/master/src/Doodad/IDomainEvent.cs). This is helpful if I want to use a `ICollection<IDomainEvent>` later to store them in memory. It could also enforce conventional properties, such as an `Id`.
 
 ## Value Objects
 
@@ -61,7 +61,7 @@ public class BankDetails : ValueObject
 }
 ```
 
-The `GetEqualityComponents` method is used by the equality comparison defined in [the base class](https://github.com/connellw/Doodad/blob/master/src/Doodad/ValueObject.cs) taken from Vladimir Khorikov's article, ["Value Object: a better implementation"](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/).
+The `GetEqualityComponents` method is used by the equality comparison defined in [the base class](https://github.com/connellsharp/Doodad/blob/master/src/Doodad/ValueObject.cs) taken from Vladimir Khorikov's article, ["Value Object: a better implementation"](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/).
 
 They are also **immutable**. You can't mutate a string or an integer for the same reason -- they are just values.
 
@@ -124,7 +124,7 @@ public class Hair : Entity
 }
 ```
 
-We would only modify the entity through calling these methods. We can check that the action is valid, make the change, and then add the domain event to the `DomainEvents` collection which I have defined in [the `Entity` base class](https://github.com/connellw/Doodad/blob/master/src/Doodad/Entity.cs).
+We would only modify the entity through calling these methods. We can check that the action is valid, make the change, and then add the domain event to the `DomainEvents` collection which I have defined in [the `Entity` base class](https://github.com/connellsharp/Doodad/blob/master/src/Doodad/Entity.cs).
 
 The base class also includes a standard `Id` property which all entities must have.
 
@@ -173,7 +173,7 @@ public class Car : Entity, IAggregateRoot
 }
 ```
 
-I have chosen to use [an `IAggregateRoot` marker interface](https://github.com/connellw/Doodad/blob/master/src/Doodad/IAggregateRoot.cs) here. The interface itself does not define any members. You could use an `AggregateRoot` base class which itself derives from `Entity` to achieve the same thing.
+I have chosen to use [an `IAggregateRoot` marker interface](https://github.com/connellsharp/Doodad/blob/master/src/Doodad/IAggregateRoot.cs) here. The interface itself does not define any members. You could use an `AggregateRoot` base class which itself derives from `Entity` to achieve the same thing.
 
 ## Domain Service
 

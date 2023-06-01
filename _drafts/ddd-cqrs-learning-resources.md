@@ -14,7 +14,7 @@ Then Herberto Graca's [DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all 
 
 Some sample repositories that use this architecture are [Jayson Taylor's CleanArchitecture repo](https://github.com/jasontaylordev/CleanArchitecture) and [TaskoMask](https://github.com/hamed-shirbandi/TaskoMask).
 
-For DDD base type implementations, Vladimir Khorikov's [entity implementation](https://enterprisecraftsmanship.com/posts/entity-base-class/) and [a better Value Object implementration](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/). In fact, I learned a lot from many of the posts on Vladimir Khorikov's blog. You can also check out [my own implementations](https://github.com/connellw/Doodad/tree/master/src/Doodad) too.
+For DDD base type implementations, Vladimir Khorikov's [entity implementation](https://enterprisecraftsmanship.com/posts/entity-base-class/) and [a better Value Object implementration](https://enterprisecraftsmanship.com/posts/value-object-better-implementation/). In fact, I learned a lot from many of the posts on Vladimir Khorikov's blog. You can also check out [my own implementations](https://github.com/connellsharp/Doodad/tree/master/src/Doodad) too.
 
 Regarding events and integration events, Kamil Grzybek's [Handling Domain Events: Missing Part](http://www.kamilgrzybek.com/design/handling-domain-events-missing-part/) and the post that it follows have been useful.
 

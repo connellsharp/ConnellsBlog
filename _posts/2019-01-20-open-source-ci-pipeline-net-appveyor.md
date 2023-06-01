@@ -6,7 +6,7 @@ tags: ci-cd
 
 Plenty of tools offer **free** licenses for open source projects. Often they work quite nicely with eachother. In this post I'll show how GitHub, AppVeyor, MyGet and CodeCov can work together in a complete CI/CD pipeline.
 
-This is the setup I use for [Firestorm](https://github.com/connellw/Firestorm) - a solution with 50+ projects, some multi-targetting .NET Standard and .NET Framework, some integration tests communicating with SQL Server.
+This is the setup I use for [Firestorm](https://github.com/connellsharp/Firestorm) - a solution with 50+ projects, some multi-targetting .NET Standard and .NET Framework, some integration tests communicating with SQL Server.
 
 The majority of this I learned from [Andrew Lock](https://andrewlock.net/publishing-your-first-nuget-package-with-appveyor-and-myget/) and [Jimmy Bogard](https://lostechies.com/jimmybogard/2016/05/24/my-oss-cicd-pipeline/) and recommend reading their posts for full details. As with their posts, we're going to start assuming your .NET source is already hosted in GitHub.
 
@@ -20,7 +20,7 @@ In your GitHub project, go to **Settings -> Branches** and add a new rule for th
 
 ## Version number
 
-All the packages should share the same version number, author, and a few other properties. We're going to use [Directory.build.props](https://github.com/jbogard/MediatR/blob/master/Directory.Build.props) to define these shared properties in the root directory. Here an example based on [the one I use](https://github.com/connellw/Firestorm/blob/master/Directory.Build.props).
+All the packages should share the same version number, author, and a few other properties. We're going to use [Directory.build.props](https://github.com/jbogard/MediatR/blob/master/Directory.Build.props) to define these shared properties in the root directory. Here an example based on [the one I use](https://github.com/connellsharp/Firestorm/blob/master/Directory.Build.props).
 
 ```xml
 <Project>
@@ -29,7 +29,7 @@ All the packages should share the same version number, author, and a few other p
     <VersionSuffix>alpha-00001</VersionSuffix>
     <Authors>Connell Watkins</Authors>
     <Copyright>Copyright © Connell Watkins 2017</Copyright>
-    <PackageProjectUrl>https://github.com/connellw/Firestorm</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/connellsharp/Firestorm</PackageProjectUrl>
   </PropertyGroup>
 </Project>
 ```
@@ -47,7 +47,7 @@ It's almost too easy to install AppVeyor as a GitHub App. Sign up at https://www
 
 ## appveyor.yml
 
-AppVeyor needs to know how to build your source. The best way to do this is to add an [`appveyor.yml`](https://www.appveyor.com/docs/appveyor-yml/) file to the root of your repository. I'll take you through the first bits of [the one I use](https://github.com/connellw/Firestorm/blob/master/appveyor.yml).
+AppVeyor needs to know how to build your source. The best way to do this is to add an [`appveyor.yml`](https://www.appveyor.com/docs/appveyor-yml/) file to the root of your repository. I'll take you through the first bits of [the one I use](https://github.com/connellsharp/Firestorm/blob/master/appveyor.yml).
 
 ```yml
 version: '{build}'
@@ -69,7 +69,7 @@ Use the given powershell script to build the project.
 
 ## build.ps1
 
-[My build script](https://github.com/connellw/Firestorm/blob/master/build.ps1) is largely taken from [Jimmy Bogard's](https://github.com/jbogard/MediatR/blob/master/Build.ps1) mentioned in the articles linked above.
+[My build script](https://github.com/connellsharp/Firestorm/blob/master/build.ps1) is largely taken from [Jimmy Bogard's](https://github.com/jbogard/MediatR/blob/master/Build.ps1) mentioned in the articles linked above.
 
 We use the same `Exec` function to throw exceptions if an exit code is not `0` and use a similar method to calculate the full version number.
 

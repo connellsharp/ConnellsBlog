@@ -23,7 +23,7 @@ I want each request to follow the same basic pipeline:
 3. Send it to [MediatR](https://github.com/jbogard/MediatR)
 4. Map the result to some response
 
-I toyed with Minimal APIs, some kind of generic controller, but eventually I thought it might be fun to roll my own. Introducing **[Controlless](https://github.com/connellw/Controlless)**.
+I toyed with Minimal APIs, some kind of generic controller, but eventually I thought it might be fun to roll my own. Introducing **[Controlless](https://github.com/connellsharp/Controlless)**.
 
 # Binding
 
