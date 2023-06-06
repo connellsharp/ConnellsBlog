@@ -7,6 +7,8 @@
 
   {% if entry.thumbnail %}
     <a href="{{ site.baseurl }}{{ entry.url }}"><img class="thumbnail" src="{{ entry.thumbnail }}" /></a>
+  {% elsif entry.youtube %}
+    <a href="{{ site.baseurl }}{{ entry.url }}"><img class="thumbnail" src="https://i.ytimg.com/vi/{{ entry.youtube }}/mqdefault.jpg" /></a>
   {% endif %}
 
   <div class="content excerpt">
@@ -20,4 +22,6 @@
     Watch Online
     {% endif %}
   </a>
+
+  <div class="clear"></div>
 </article>
