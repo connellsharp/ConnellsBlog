@@ -1,4 +1,3 @@
-
     #cookie-notice {
         padding: 0.5rem 1rem;
         display: none;
@@ -6,16 +5,23 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        background: #eee;
+        
+        @include background-faded;
     }
+    
     #cookie-notice button {
-			padding: 10px;
-			margin: 5px;
-		}
-    @media (max-width: 767px) {
-        #cookie-notice span {
-            display: block;
-            padding-top: 3px;
-            margin-bottom: 1rem;
+        padding: 10px;
+        margin: 5px;
+
+        @include background-faded;
+        @include color-normal;
+		
+
+        @include mobile {
+            #cookie-notice span {
+                display: block;
+                padding-top: 3px;
+                margin-bottom: 1rem;
+            }
         }
     }

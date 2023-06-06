@@ -15,7 +15,10 @@ $black: #000;
 $darkerGray: #222;
 $darkGray: #333;
 $gray: #666;
-$lightGray: #eee;
+$middleGray: #888;
+$lightishGray: #aaa;
+$lightGray: #ddd;
+$lighterGray: #eee;
 $white: #fff;
 
 // Font stacks
@@ -27,5 +30,84 @@ $georgia: Georgia, serif;
 @mixin mobile {
   @media screen and (max-width: 640px) {
     @content;
+  }
+}
+
+// Dark mode
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin color-normal {
+  color: $darkGray;
+
+  @include dark-mode {
+    color: $lighterGray;
+  }
+}
+
+@mixin color-blue {
+  color: $blue;
+
+  @include dark-mode {
+    color: #4390e8;
+  }
+}
+
+@mixin color-faded {
+  color: $gray;
+
+  @include dark-mode {
+    color: $lightishGray;
+  }
+}
+
+@mixin color-very-faded {
+  color: $lightishGray;
+
+  @include dark-mode {
+    color: $gray;
+  }
+}
+
+@mixin background-normal {
+  background: $white;
+
+  @include dark-mode {
+    background: $darkerGray;
+  }
+}
+
+@mixin background-faded {
+  background: $lighterGray;
+
+  @include dark-mode {
+    background: $gray;
+  }
+}
+
+@mixin border-color-faded {
+  border-color: $lighterGray;
+
+  @include dark-mode {
+    border-color: $gray;
+  }
+}
+
+@mixin border-color-slightly-faded {
+  border-color: $lightGray;
+
+  @include dark-mode {
+    border-color: $middleGray;
+  }
+}
+
+@mixin border-color-normal {
+  border-color: $gray;
+
+  @include dark-mode {
+    border-color: $lightGray;
   }
 }

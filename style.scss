@@ -18,9 +18,10 @@ html {
 }
 
 body {
-	background: $white;
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+
+  @include color-normal;
+  @include background-normal;
 }
 
 .container {
@@ -32,12 +33,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
   font-weight: bold;
 
   line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
+
+  @include color-normal;
 
   @include mobile {
     line-height: 1.4;
@@ -61,7 +63,8 @@ h3 {
 
 h4 {
   font-size: 1.125em;
-  color: $gray;
+
+  @include color-faded;
 }
 
 p {
@@ -69,11 +72,13 @@ p {
 }
 
 a {
-  color: $blue;
   text-decoration: none;
 	cursor: pointer;
+
+  @include color-blue;
+
   &:hover, &:active {
-    color: $blue;
+    @include color-blue;
   }
 }
 
@@ -116,13 +121,9 @@ img {
 }
 
 // Specify the color of the selection
-::-moz-selection {
-  color: $black;
-  background: $lightGray;
-}
-::selection {
-  color: $black;
-  background: $lightGray;
+::-moz-selection, ::selection {
+  @include color-normal;
+  @include background-normal;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -151,7 +152,9 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid;
+
+  @include border-color-faded;
 
   @include mobile {
     text-align: center;
@@ -187,18 +190,20 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
+
+  @include color-normal;
 }
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
   font-size: 16px;
+
+  @include color-faded;
 
   @include mobile {
     margin: 3px 0;
@@ -220,14 +225,15 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
+    @include color-normal;
+
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+      @include color-blue;
     }
   }
 }
@@ -238,7 +244,9 @@ nav {
 
 .entries > .entry {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid;
+
+  @include border-color-faded;
 }
 
 .entries > .entry:last-child {
@@ -249,11 +257,13 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 2px solid;
     padding: 0.1em 1em;
-    color: $gray;
     font-size: 18px;
     font-style: italic;
+
+    @include border-color-normal;
+    @include color-faded;
   }
 
   .comments {
@@ -297,7 +307,7 @@ nav {
 .entry-meta {
   margin: -10px 0 25px;
   font-size: 0.7em;
-  color: #bbb;
+  @include color-very-faded;
 
   span {
     padding-right: 20px;
@@ -338,7 +348,8 @@ nav {
 
 .tag-summary {
   padding-bottom: 1em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid;
+  @include border-color-faded;
 }
 
 .content {
@@ -347,9 +358,11 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  @include border-color-slightly-faded;
+  @include background-faded;
 }
 
 footer {
@@ -363,3 +376,7 @@ footer {
 @import "svg-icons";
 
 @import "cookie-consent";
+
+@media (prefers-color-scheme: dark) {
+
+}
