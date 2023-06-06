@@ -55,15 +55,12 @@ collections:
   talks:
     permalink: "/:collection/:title/"
     output: true
+  explainers:
+    permalink: "/:collection/:title/"
+    output: true
   drafts:
     permalink: "/:collection/:title/"
     output: true
-defaults:
-- scope:
-    path: _talks
-    type: talk
-  values:
-    layout: talk
 
 #
 # !! You don't need to change any of the configuration flags below !!
@@ -86,7 +83,7 @@ kramdown:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :compressed # :expanded or :compressed (minified)
 
 # Use the following plug-ins
 gems:
