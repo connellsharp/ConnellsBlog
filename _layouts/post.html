@@ -7,7 +7,11 @@ layout: default
 
   {% include entry-meta.html entry=page %}
 
+  {% if page.invert_dark_images %}
+  <div class="content invert-dark-imgs">
+  {% else %}
   <div class="content">
+  {% endif %}
     {{ content }}
   </div>
 

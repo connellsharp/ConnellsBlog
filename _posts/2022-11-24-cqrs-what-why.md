@@ -2,6 +2,7 @@
 layout: post
 title: "CQRS: What and Why?"
 tags: cqrs
+invert_dark_images: true
 ---
 
 CQRS is really simple. Sometimes the idea gets conflated with other concepts such as Event Sourcing and DDD, but that is not CQRS. So, what is it then?

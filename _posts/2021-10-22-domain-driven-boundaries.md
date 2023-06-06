@@ -2,6 +2,7 @@
 layout: post
 title: Domain-Driven Boundaries
 tags: ddd architecture
+invert_dark_images: true
 ---
 
 At its core, Domain-Driven Design is about building shared models as a collaboration between domain experts and technical experts. When engineers speak the same language as the rest of the business, we can build an architecture that aligns with how the business works.

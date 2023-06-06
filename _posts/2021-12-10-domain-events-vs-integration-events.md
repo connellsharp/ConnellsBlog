@@ -2,6 +2,7 @@
 layout: post
 title: Domain Events vs Integration Events
 tags: ddd events
+invert_dark_images: true
 ---
 
 There are different kinds of events found in event-driven systems. They often represent the same thing that has happened, but serve different purposes and have different advantages. Here I'd like to outline the differences between a few terms.

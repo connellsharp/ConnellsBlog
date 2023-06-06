@@ -2,6 +2,7 @@
 layout: post
 title: Visualising Software in Shapes
 tags: architecture
+invert_dark_images: true
 ---
 
 When I think of a software system, I see shapes and lines connecting groups of smaller shapes and smaller lines. Like a galaxy of solar systems with planets of continents, each with roads connecting cities with villages and hamlets. It's a structure that fits related concepts together and hides away complexity at different scales.

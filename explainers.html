@@ -5,7 +5,7 @@ title: Drawing Boxes
 
 {% assign entries = site.explainers | sort: 'date' | reverse  %}
 
-<div class="explainers">
+<div class="explainers invert-dark-imgs">
   {% for entry in entries %}
     {% include entry-collapsed.html entry=entry %}
   {% endfor %}

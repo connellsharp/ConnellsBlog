@@ -288,7 +288,7 @@ nav {
   .clear { clear:both; }
 }
 
-.explainers .thumbnail {
+.invert-dark-imgs img {
   @include dark-mode {
     filter: invert(100%) hue-rotate(180deg) contrast(0.73) saturate(1.5);
   }

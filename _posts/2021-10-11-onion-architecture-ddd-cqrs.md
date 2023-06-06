@@ -2,6 +2,7 @@
 layout: post
 title: Onion Architecture with DDD and CQRS
 tags: architecture ddd cqrs
+invert_dark_images: true
 ---
 
 A lot of software engineering is about [drawing boxes](/drawing-boxes). That is, deciding how to break down the code we write. We don't just write everything in the `Main` method. We set boundaries, create abstractions, and divide things into single responsibilities.

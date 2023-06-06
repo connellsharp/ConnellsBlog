@@ -2,6 +2,7 @@
 layout: post
 title: Software is about Drawing Boxes
 tags: architecture
+invert_dark_images: true
 ---
 
 That's what it all comes down to. Not to diminish anyone's long, hardworking career, but every design decision we make ultimately boils down to where we want to define a certain boundary. What concepts should we couple together? Which layers *"know of"* which? It's all a structure of how thoughts and ideas fit together.
