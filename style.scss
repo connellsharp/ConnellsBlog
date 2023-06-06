@@ -242,14 +242,14 @@ nav {
 // .main
 //
 
-.entries > .entry {
+.entry {
   padding-bottom: 2em;
   border-bottom: 1px solid;
 
   @include border-color-faded;
 }
 
-.entries > .entry:last-child {
+.entry:last-child {
   padding-bottom: 1em;
   border-bottom: none;
 }
@@ -277,7 +277,7 @@ nav {
   }
 }
 
-.talk {
+.video {
   .thumbnail {
     float: right; 
     width: 240px;
@@ -286,14 +286,14 @@ nav {
   }
 }
 
-.video {
+.video-outer-wrapper {
   display: block;
   margin: 0 auto;
   width: 640px;
   max-width: 100%;
   height: auto;
 
-  .video-wrapper {
+  .video-inner-wrapper {
     position: relative; padding-top: 56%;
     iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
   }
