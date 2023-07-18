@@ -8,8 +8,13 @@ layout: default
 {{ content }}
 </div>
 
+{% assign all = site.posts | concat: site.talks | concat: site.explainers %}
+{% assign sorted = all | sort: 'date' | reverse %}
+
 <div class="entries">
-  {% for post in site.tags[page.tag] %}
-    {% include entry-collapsed.html entry=post %}
+  {% for entry in sorted %}
+    {% if entry.tags contains page.tag %}
+      {% include entry-collapsed.html entry=post %}
+    {% endif %}
   {% endfor %}
 </div>

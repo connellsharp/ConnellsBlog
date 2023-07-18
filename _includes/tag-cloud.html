@@ -1,17 +1,28 @@
 <div class="tag-cloud">
-    {% assign tags = site.tags | sort %}
-    {% for tag in tags %}
-    {% if tag contains page.tag %}
-    <span class="site-tag selected" style="font-size: {{ tag | last | size  |  times: 17 | plus: 50  }}%">
-                #{{ tag[0] }}
-    </span>
-    {% else %}
-    <span class="site-tag">
-        <a href="/tags/{{ tag | first | slugify }}/"
-            style="font-size: {{ tag | last | size  |  times: 17 | plus: 50  }}%">
-                #{{ tag[0] }}
-        </a>
-    </span>
-    {% endif %}
+    {% assign all = site.posts | concat: site.talks | concat: site.explainers %}
+    {% assign all_tags = all | map: 'tags' | join: ',' | split: ',' %}
+    {% assign uniq_tags = all_tags | uniq | sort %}
+
+    {% for tag in uniq_tags %}
+        {% assign page_count = 0 %}
+        {% for t in all_tags %}
+            {% if t == tag %}
+                {% assign page_count = page_count | plus: 1 %}
+            {% endif %}
+        {% endfor %}
+
+        {% assign font_size = page_count | times: 17 | plus: 50 %}
+        
+        {% if tag == page.tag %}
+            <span class="site-tag selected" style="font-size: {{ font_size }}%">
+                #{{ tag }}
+            </span>
+        {% else %}
+            <span class="site-tag">
+                <a href="/tags/{{ tag | slugify }}/" style="font-size: {{ font_size }}%">
+                    #{{ tag }}
+                </a>
+            </span>
+        {% endif %}
     {% endfor %}
 </div>
