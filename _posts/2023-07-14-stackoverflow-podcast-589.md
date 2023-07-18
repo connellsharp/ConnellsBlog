@@ -1,7 +1,7 @@
 ---
 layout: link
 title: "Stack Overflow Podcast Ep. 589"
-tags: podcast agile
+tags: agile speaking
 thumbnail: https://149351115.v2.pressablecdn.com/wp-content/uploads/2022/03/blog-podcast-relaunch-1.png
 link:
   url: https://stackoverflow.blog/2023/07/14/how-terrifying-is-giving-a-conference-talk-ep-589/
