@@ -11,10 +11,19 @@
     <a href="{{ site.baseurl }}{{ entry.url }}"><img class="thumbnail" src="https://i.ytimg.com/vi/{{ entry.youtube }}/mqdefault.jpg" /></a>
   {% endif %}
 
+  {% if entry.subtitle %}
+    <h3>{{ entry.subtitle }}</h3>
+  {% endif %}
+
   <div class="content excerpt">
     {{ entry.excerpt }}
   </div>
 
+  {% if entry.link %}
+  <a href="{{ entry.link.url }}" class="read-more" target="_blank">
+    {{ entry.link.text }} <img src="/images/icons/newtab.svg" />
+  </a>
+  {% else %}
   <a href="{{ site.baseurl }}{{ entry.url }}" class="read-more">
     {% if entry.layout == 'post' %}
     Read More
@@ -22,6 +31,7 @@
     Watch Online
     {% endif %}
   </a>
+  {% endif %}
 
   <div class="clear"></div>
 </article>
