@@ -23,7 +23,7 @@ But [allow it to meander](https://www.honeycomb.io/blog/standup-meetings-are-dea
 
 2. The requirements are unclear, the scope has creeped. In this case, we just need a little **mini backlog refinement** on that particular task.
 
-3. I'm probably gonna need some more work to pick up. Good probably to have, right? Sounds like we need a **mini sprint planning**. Not that we're really doing sprints, just that this is where we prioritise what needs doing and move it to the "to do" column.
+3. I'm probably gonna need some more work to pick up. Good problem to have, right? Sounds like we need a **mini sprint planning**. Not that we're really doing sprints, just that this is where we prioritise what needs doing and move it to the "to do" column.
 
 This is as agile as it gets; solve the problems that need solving when they need solving, and don't solve problems you don't need to. Don't spend dedicated time discussing the minutia of a story, making sure it has the right user story format, for example
 
@@ -78,4 +78,4 @@ Except it's much more flexible.
 - "Let's bring that one up in refinement"? You're already in it.
 - Want to reduce meeting time overall? Try 45 minutes per day instead.
 
-Nothing works for every type of team, including Scrum. I've worked in many teams that started with a Scrum template and gradually evolved into different things through inspecting and adapting the process. What I've described here is the simplist and most flexible starting point. Why start with six ceremonies when we can start with just two? And if the team later concludes we need a separate meeting for a special purpose, then we can always add that in.
+Nothing works for every type of team, including Scrum. I've worked in many teams that started with a Scrum template and gradually evolved into different things through inspecting and adapting the process. What I've described here is the simplest and most flexible starting point. Why start with six ceremonies when we can start with just two? And if the team later concludes we need a separate meeting for a special purpose, then we can always add that in.
