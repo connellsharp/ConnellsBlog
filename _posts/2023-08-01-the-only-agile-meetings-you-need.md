@@ -11,7 +11,7 @@ Some places "do agile" because it's the cool trendy thing that tech companies do
 
 Then, in 2020, we all went remote, and a lot of us stayed at least partly remote. Now we continue these categories of meetings and miss the essentials.
 
-After working: in Scrum, Kanban, several hybrids of those, and startup-cowboy-totally-making-it-up-as-we-go; in an office, fully remote, some hybrid of those; in one timezone, with people 2-3 hours ahead, 5-8 hours behind; with and without outsourcing; as a developer, tech lead, even playing the Product Owner role for one year; I've come to the opinion that you only need **two meetings**:
+After working: in Scrum, Kanban, several hybrids of those, startup cowboy totally-making-it-up-as-we-go; in an office, fully remote, some hybrid of those; in one timezone, with people 2-3 hours ahead, 5-8 hours behind; with and without outsourcing; as a developer, tech lead, even playing the Product Owner role for one year; I've come to the opinion that you only need **two meetings**:
 
 ## 1. Daily Team Sync
 
@@ -31,10 +31,12 @@ This is as agile as it gets; solve the problems that need solving when they need
 
 I'll bet your developers still get the copy-change right without that. I'll bet you all estimate it at 1 story point without much discussion. Spend that time on the things that matter instead.
 
+{:start="4"}
 4. We need **estimates** for a future task. You might not see these tasks on your Kanban board, but it's essentially the column before "to do".
 
 You might find another problem though.
 
+{:start="5"}
 5. We have no problems - everything is on track. You could end the meeting here if you want. But don't. **Have a bit of fun!** Play some games, get to know each other better. You might spend more time with each other than some people you'd call friends, so it's worth making an effort to make it pleasant.
 
 ## 2. Bi-weekly Celebration
@@ -59,8 +61,10 @@ Again, this can lead you in a few directions:
 
 Then close the doors, go to a different call, or stop recording. It's time for the **retrospective**.
 
+{:start="4"}
 4. **Have some fun!** Maybe you didn't get a chance to during the daily meetings, so this is a great time to. Retros can sometimes get a bit heated even when they're totally blameless, so plan a little ice-breaker first; set some time aside to learn about each other's hobbies or play some games together. Strengthen the relationships in the team and build some trust.
 
+{:start="5"}
 5. Discuss what has happened since the last time and **decide how you could improve**. You can discuss the process itself. There's no real agenda, so I like a lite version of the [Lean Coffee format](http://leancoffee.org/) where people suggest topics then vote on them. There should be actionable output.
 
 ## The Difference
