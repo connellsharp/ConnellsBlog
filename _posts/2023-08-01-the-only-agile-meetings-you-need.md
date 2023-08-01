@@ -39,7 +39,7 @@ You might find another problem though.
 {:start="5"}
 5. We have no problems - everything is on track. You could end the meeting here if you want. But don't. **Have a bit of fun!** Play some games, get to know each other better. You might spend more time with each other than some people you'd call friends, so it's worth making an effort to make it pleasant.
 
-## 2. Bi-weekly Celebration
+## 2. Fortnightly Celebration
 
 There are useful Scrum ceremonies that we probably don't want to do every day. But, in the same spirit as above, we can roll these into one event with a central theme -- take a look at what we've done, celebrate it, and learn from it.
 
