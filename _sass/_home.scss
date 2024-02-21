@@ -1,3 +1,15 @@
+@mixin mobile-small {
+    @media screen and (max-width: 440px) {
+        @content;
+    }
+}
+
+@mixin mobile-xs {
+    @media screen and (max-width: 390px) {
+        @content;
+    }
+}
+
 #home {
     position: relative;
     margin: auto;
@@ -15,6 +27,11 @@
             width: 130px;
             padding: 20px;
             color: $white;
+
+            @include mobile-small {
+                font-size:0.8em;
+                width: 110px;
+            }
         }
     }
 
@@ -27,7 +44,13 @@
         background-size: 70px;
         background-position: center;
 
-        @media screen and (max-width: 440px) {
+        @include mobile-small {
+            height: 40px;
+            width: 40px;
+            background-size: 40px;
+        }
+
+        @include mobile-xs {
             display: none;
         }
 
@@ -43,6 +66,10 @@
     .point-down {
         background-image: url(/images/arrows/down.svg);
         margin: 0 50px;
+
+        @include mobile-small {
+            margin: 0 55px;
+        }
     }
 
     .blue {
