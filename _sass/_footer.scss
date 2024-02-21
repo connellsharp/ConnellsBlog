@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+}
+
+.not-footer {
+  min-height: 100%;
+  margin-bottom: -82px;
+}
+
+.not-footer:after {
+  content: "";
+  display: block;
+  height: 132px;
+}
+
+.wrapper-footer {
+  height: 82px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  @include border-color-slightly-faded;
+  @include background-faded;
+}
+
+footer {
+  padding: 20px 0;
+  height: 80px;
+  text-align: center;
+}
