@@ -1,0 +1,63 @@
+#home {
+    position: relative;
+    margin: auto;
+    text-align: center;
+
+    .box {
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 15px;
+        text-align: center;
+        margin: 20px;
+
+        a {
+            display:block;
+            width: 150px;
+            padding: 20px;
+            color: $white;
+        }
+    }
+
+    .arrow {
+        vertical-align: middle;
+        display: inline-block;
+        height: 70px;
+        width: 70px;
+        background-repeat: no-repeat;
+        background-size: 70px;
+        background-position: center;
+
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
+
+        @include dark-mode {
+            filter: invert(100%) contrast(0.73) saturate(1.5);
+        }
+    }
+
+    .point-right {
+        background-image: url(/images/arrows/left.svg);
+    }
+
+    .point-down {
+        background-image: url(/images/arrows/down.svg);
+        margin: 0 60px;
+    }
+
+    .blue {
+        background-color: $blue;
+    }
+
+    .green {
+        background-color: $green;
+    }
+
+    .red {
+        background-color: $red;
+    }
+
+    .purple {
+        background-color: $purple;
+    }
+}
