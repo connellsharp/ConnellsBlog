@@ -242,6 +242,13 @@ nav {
 // .main
 //
 
+.preamble {
+  border-bottom: 1px solid;
+  @include border-color-faded;
+  padding-bottom:30px;
+  margin-bottom: 50px;
+}
+
 .entry {
   padding-bottom: 2em;
   border-bottom: 1px solid;
