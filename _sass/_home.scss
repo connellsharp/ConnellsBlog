@@ -6,13 +6,13 @@
     .box {
         display: inline-block;
         vertical-align: middle;
-        border-radius: 15px;
+        border-radius: 10px;
         text-align: center;
         margin: 20px;
 
         a {
             display:block;
-            width: 150px;
+            width: 130px;
             padding: 20px;
             color: $white;
         }
@@ -27,7 +27,7 @@
         background-size: 70px;
         background-position: center;
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 440px) {
             display: none;
         }
 
@@ -42,7 +42,7 @@
 
     .point-down {
         background-image: url(/images/arrows/down.svg);
-        margin: 0 60px;
+        margin: 0 50px;
     }
 
     .blue {
