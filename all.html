@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+{% assign entries = site.posts | concat: site.talks | sort: 'date' | reverse %}
+
+<div class="entries">
+  {% for entry in entries %}
+    {% include entry-collapsed.html entry=entry %}
+  {% endfor %}
+</div>

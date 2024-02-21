@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<div class="entries">
+  {% for post in site.posts %}
+    {% if post.layout == 'post' %}
+      {% include entry-collapsed.html entry=post %}
+    {% endif %}
+  {% endfor %}
+</div>
